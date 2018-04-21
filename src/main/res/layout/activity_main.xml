@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/txtGoal1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15sp"
+        android:layout_marginLeft="15sp"
+        android:layout_marginRight="15sp"
+        android:layout_marginTop="50sp"
+        android:gravity="center_horizontal"
+        android:hint="Goal #1 goes here"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/txtGoal2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15sp"
+        android:gravity="center_horizontal"
+        android:hint="Goal #2 goes here"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/txtGoal3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15sp"
+        android:gravity="center_horizontal"
+        android:hint="Goal #3 goes here"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btnGenerateGoals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Generate Goals" />
+
+    <EditText
+        android:id="@+id/edtNewGoal"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40sp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="Enter new goal here"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnEnterNewGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Enter New Goal" />
+
+    <Button
+        android:id="@+id/btnShowEntireGoalList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60sp"
+        android:text="Show Entire Goal List" />
+
+</LinearLayout>
