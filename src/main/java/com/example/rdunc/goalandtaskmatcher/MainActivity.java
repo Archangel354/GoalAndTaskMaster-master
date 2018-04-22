@@ -42,6 +42,66 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 startActivity(intent);
             }
         });
+
+        // Find the ListView which will be populated with the goal data
+        ListView goalListView = (ListView) findViewById(R.id.list);
+
+        // Find and set empty view on the ListView, so that it only shows when the list has 0 items.
+        View emptyView = findViewById(R.id.empty_view);
+        goalListView.setEmptyView(emptyView);
+
+        // Setup an Adapter to create a list item for each row of goal data in the Cursor.
+        // There is no goal data yet (until the loader finishes) so pass in null for the Cursor.
+        mCursorAdapter = new GoalCursorAdapter(this, null);
+        goalListView.setAdapter(mCursorAdapter);
+        // Setup the item click listener
+        goalListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                // Create new intent to go to {@link EditorActivity}
+                Intent intent = new Intent(MainActivity.this, EditorActivity.class);
+                // Form the content URI that represents the specific goal that was clicked on,
+                // by appending the "id" (passed as input to this method) onto the
+                // {@link GoalEntry#CONTENT_URI}.
+                // For example, the URI would be "content://com.example.rdunc.goalandtaskmatcher/goals/2"
+                // if the goal with ID 2 was clicked on.
+                Uri currentGoalUri = ContentUris.withAppendedId(GoalEntry.CONTENT_URI, id);
+                // Set the URI on the data field of the intent
+                intent.setData(currentGoalUri);
+                // Launch the {@link EditorActivity} to display the data for the current goal.
+                startActivity(intent);
+            }
+        });
+
+        // Kick off the loader
+        getLoaderManager().initLoader(GOAL_LOADER, null, this);
+    }
+
+    /**
+     * Helper method to insert hardcoded goal data into the database. For debugging purposes only.
+     */
+    private void insertGoal() {
+
+        String defaultUriString = "drawable/grocerycart.png";
+        int resID = getResources().getIdentifier("grocerycart" , "drawable", getPackageName());
+        Uri imageUri = Uri.parse(defaultUriString);
+
+        imageUri =  getUriToDrawable(this, resID);
+        //Uri imageUri = Uri.parse(mImageEditText.getText().toString());
+        //mImageView.setImageBitmap(EditorActivity.getBitmapFromUri(imageUri));
+
+
+        // Create a ContentValues object where column names are the keys,
+        // and hammer's attributes are the values.
+        ContentValues values = new ContentValues();
+        values.put(GoalEntry.COLUMN_GOAL_DESCRIPTION, "Climb Mt. Everest");
+
+        // Insert a new row for Climb Mt. Everest into the provider using the ContentResolver.
+        // Use the {@link ProductEntry#CONTENT_URI} to indicate that we want to insert
+        // into the goals database table.
+        // Receive the new content URI that will allow us to access the Climb Mt. Everest data in the future.
+        Uri newUri = getContentResolver().insert(GoalEntry.CONTENT_URI, values);
     }
 
     @Override
