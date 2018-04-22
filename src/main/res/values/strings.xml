@@ -2,4 +2,6 @@
     <string name="app_name">Goal and Task Matcher</string>
     <string name="action_insert_dummy_data">Insert dummy data</string>
     <string name="action_delete_all_entries">Delete all Entries</string>
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
 </resources>
