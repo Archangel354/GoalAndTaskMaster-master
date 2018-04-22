@@ -6,4 +6,8 @@
     <string name="action_delete">Delete</string>
     <string name="empty_view_title_text">This list of goals is empty...</string>
     <string name="empty_view_subtitle_text">Get started by adding a goal</string>
+    <string name="editor_activity_title_new_goal">Add a goal</string>
+    <string name="editor_activity_title_edit_goal">Edit Goal</string>
+    <string name="goalLabel">Description</string>
+    <string name="hint_product_name">Goal Description</string>
 </resources>

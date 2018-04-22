@@ -3,6 +3,7 @@ package com.example.rdunc.goalandtaskmatcher;
 import android.app.LoaderManager;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
@@ -52,6 +53,32 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
+
+        // Examine the intent that was used to launch this activity,
+        // in order to figure out if we're creating a new goal or editing an existing one.
+        Intent intent = getIntent();
+        mCurrentGoalUri = intent.getData();
+
+        // If the intent DOES NOT contain a goal content URI, then we know that we are
+        // creating a new goal.
+        if (mCurrentGoalUri == null) {
+            // This is a new goal, so change the app bar to say "Add a Goal"
+            setTitle(getString(R.string.editor_activity_title_new_goal));
+
+            // Invalidate the options menu, so the "Delete" menu option can be hidden.
+            // (It doesn't make sense to delete a goal that hasn't been created yet.)
+            invalidateOptionsMenu();
+        } else {
+            // Otherwise this is an existing goal, so change app bar to say "Edit Goal"
+            setTitle(getString(R.string.editor_activity_title_edit_goal));
+
+            // Initialize a loader to read the goal data from the database
+            // and display the current values in the editor
+            getLoaderManager().initLoader(EXISTING_GOAL_LOADER, null, this);
+        }
+
+        // Find all relevant views that we will need to read user input from
+        mDescriptionEditText = (EditText) findViewById(R.id.edtGoalDescription);
     }
 
     public static final Uri getUriToDrawable(@NonNull Context context,
