@@ -4,4 +4,6 @@
     <string name="action_delete_all_entries">Delete all Entries</string>
     <string name="action_save">Save</string>
     <string name="action_delete">Delete</string>
+    <string name="empty_view_title_text">This list of goals is empty...</string>
+    <string name="empty_view_subtitle_text">Get started by adding a goal</string>
 </resources>
