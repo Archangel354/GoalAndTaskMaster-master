@@ -34,6 +34,9 @@ public class MidActivity extends AppCompatActivity implements LoaderManager.Load
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mid);
 
+
+
+
         // Setup big green "plus" button to open EditorActivity
         ImageButton btnAddGoal = (ImageButton) findViewById(R.id.btnAddGoal);
         btnAddGoal.setOnClickListener(new View.OnClickListener() {
