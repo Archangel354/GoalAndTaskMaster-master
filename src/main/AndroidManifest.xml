@@ -12,11 +12,11 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".EditorActivity">
-
             android:parentActivityName=".MainActivity" >
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
@@ -24,10 +24,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
         <provider
             android:name=".data.GoalsandTaskMatcherProvider"
             android:authorities="com.example.rdunc.goalandtaskmatcher"
             android:exported="false" />
+
+        <activity android:name=".MidActivity"></activity>
     </application>
 
 </manifest>
