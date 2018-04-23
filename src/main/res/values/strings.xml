@@ -10,4 +10,8 @@
     <string name="editor_activity_title_edit_goal">Edit Goal</string>
     <string name="goalLabel">Description</string>
     <string name="hint_product_name">Goal Description</string>
+    <string name="editor_insert_goal_failed">Error with saving goal</string>
+    <string name="editor_insert_goal_successful">Goal saved</string>
+    <string name="editor_update_goal_failed">Error with updating goal</string>
+    <string name="editor_update_goal_successful">Goal updated</string>
 </resources>
