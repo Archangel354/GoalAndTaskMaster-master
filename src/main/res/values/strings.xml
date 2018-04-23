@@ -14,4 +14,12 @@
     <string name="editor_insert_goal_successful">Goal saved</string>
     <string name="editor_update_goal_failed">Error with updating goal</string>
     <string name="editor_update_goal_successful">Goal updated</string>
+    <string name="delete_dialog_msg">Delete this goal?</string>
+    <string name="delete">Delete</string>
+    <string name="editor_delete_goal_failed">Error with deleting the goal</string>
+    <string name="editor_delete_goal_successful">Goal deleted</string>
+    <string name="cancel">Cancel</string>
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing</string>
+    <string name="discard">Discard</string>
+    <string name="keep_editing">Keep Editing</string>
 </resources>
