@@ -15,4 +15,20 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40sp"
         android:text="Go to MidLevel" />
+
+    <TextView
+        android:id="@+id/txtGoal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40sp"
+        android:hint="Goal #1 here" />
+
+    <Button
+        android:id="@+id/btnDisplayGoals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40sp"
+        android:text="Display goals" />
 </LinearLayout>
