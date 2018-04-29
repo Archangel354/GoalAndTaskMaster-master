@@ -121,6 +121,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         ContentValues values = new ContentValues();
         values.put(GoalandTaskMatcherContract.GoalEntry.COLUMN_GOAL_DESCRIPTION, descriptionString);
 
+
         // Determine if this is a new or existing goal by checking if mCurrentGoalUri is null or not
         if (mCurrentGoalUri == null) {
             // This is a NEW goal, so insert a new goal into the provider,
