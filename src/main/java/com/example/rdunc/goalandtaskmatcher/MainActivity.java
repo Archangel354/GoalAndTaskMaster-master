@@ -15,6 +15,9 @@ import android.widget.TextView;
 
 import com.example.rdunc.goalandtaskmatcher.data.GoalandTaskMatcherContract;
 import com.example.rdunc.goalandtaskmatcher.data.GoalandTaskMatcherContract.GoalEntry;
+
+import java.util.Random;
+
 import static com.example.rdunc.goalandtaskmatcher.data.GoalandTaskMatcherContract.GoalEntry.CONTENT_URI;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
@@ -89,9 +92,19 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             return;
         }
 
+        Integer count;
+        count = cursor.getCount();
+
+
+        Random r = new Random();
+        Integer r1 = r.nextInt();
+
+        Log.i("The random# is: ", String.valueOf(r1));
+
+
         // Proceed with moving to the first row of the cursor and reading data from it
         // (This should be the only row in the cursor)
-        if (cursor.moveToFirst()) {
+        if (cursor.move(3)) {
             // Find the columns of product attributes that we're interested in
             int idColumnIndex = cursor.getColumnIndex(GoalEntry.MY_GOAL_ID);
             int descriptionColumnIndex = cursor.getColumnIndex(GoalEntry.COLUMN_GOAL_DESCRIPTION);
